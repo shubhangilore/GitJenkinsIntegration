@@ -1,0 +1,9 @@
+gems-reg.csv
+
+Price of diamond depends on 4Cs - carat, clarity, color, cut 
+
+Price of this gem dependson 3Fs - feature1, feature2, feature3
+
+Use Linear Regression and find out the price of gems given in gems-reg-pred.csv
+
+ 

@@ -1,0 +1,6 @@
+Pressure and Weight in Cryogenic Flow Meters
+
+In the following data pairs
+X = pressure (lb/sq in) of liquid nitrogen
+Y = weight in pounds of liquid nitrogen passing through flow meter each second
+Reference: Technometrics, Vol. 19, p353-379

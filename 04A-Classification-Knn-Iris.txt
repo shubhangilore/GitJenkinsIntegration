@@ -1,0 +1,43 @@
+################################
+# For Knn Classification Only
+# find best k ... how?
+# find which K has least error
+###############################
+
+# calculating error for K values between 1 and 25
+# go upto 50 if required
+print("\n*** Find Best K ***")
+lKnnCount = []
+lKnnError = []
+for i in range(3, 25):
+    knn = KNeighborsClassifier(n_neighbors=i)
+    knn.fit(X_train, y_train)
+    i_test = knn.predict(X_test)
+    vKnnAcc = accuracy_score(y_test, i_test)
+    lKnnCount.append(i)
+    lKnnError.append(round(1-vKnnAcc,2))
+    print('%3d. %7.2f' % (i, 1-vKnnAcc))
+print("Done ...")
+#print(lKnnCount)
+#print(lKnnError)
+#lKnnError[0] = 0.07
+#lKnnError[1] = 0.08
+#lKnnError[2] = 0.05
+#lKnnError[3] = 0.05
+
+# compute Best K ... minimum error
+vBestKnnInd = lKnnError.index(min(lKnnError))
+print("\n*** Best K Data ***")
+print("Best K Index: ",vBestKnnInd)
+print("Best K Value: ",lKnnCount[vBestKnnInd])
+print("Best K Error: ",lKnnError[vBestKnnInd])
+
+# plot K Value v/s Error
+plt.figure(figsize=(10,5))
+sns.pointplot(x=lKnnCount, y=lKnnError, color="b", scale=0.5)
+plt.title('K Value v/s Error')
+plt.xlabel('K Value')
+plt.ylabel('Error')
+plt.show()
+
+
